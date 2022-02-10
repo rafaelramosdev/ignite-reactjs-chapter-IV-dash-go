@@ -76,7 +76,7 @@ export default function Dashboard() {
 
         <SimpleGrid flex="1" gap="4" minChildWidth="320px" alignItems="flex-start"> {/* 'flex=1' indicates that the element will occupy the remaining width/is available, in which case 'SimpleGrid' will occupy the width left over from the 'Sidebar' */}
           <Box
-            p="8"
+            p={["6", "8"]}
             bg="gray.800"
             borderRadius={8}
             pb="4"
@@ -87,7 +87,7 @@ export default function Dashboard() {
           </Box>
 
           <Box
-            p="8"
+            p={["6", "8"]}
             bg="gray.800"
             borderRadius={8}
             pb="4"
