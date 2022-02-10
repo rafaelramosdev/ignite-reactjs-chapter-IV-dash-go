@@ -1,15 +1,18 @@
 import { forwardRef, ForwardRefRenderFunction } from 'react'
 
-import { FormControl, FormLabel, Input as ChakraInput, InputProps as ChakraInputProps } from '@chakra-ui/react'
+import { FieldError } from 'react-hook-form'
+
+import { FormControl, FormErrorMessage, FormLabel, Input as ChakraInput, InputProps as ChakraInputProps } from '@chakra-ui/react'
 
 interface InputProps extends ChakraInputProps{
   name: string;
   label?: string;
+  error?: FieldError;
 }
 
-const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = ({ name, label, ...rest }, ref) => {
+const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = ({ name, label, error = null, ...rest }, ref) => {
   return (
-    <FormControl>
+    <FormControl isInvalid={!!error}>
       { !!label && <FormLabel htmlFor={name}>{label}</FormLabel>}
 
       <ChakraInput
@@ -25,6 +28,12 @@ const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = ({ nam
         ref={ref}
         {...rest}
       />
+
+      {!!error && ( // this way I check if there is something within the variable 'error', then it will only show the error message only if the variable 'error' exists and only if there is something inside it, if it exists but has nothing inside it, it will not show the error message
+        <FormErrorMessage>
+          {error.message}
+        </FormErrorMessage>
+      )}
     </FormControl>
   )
 }
