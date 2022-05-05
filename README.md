@@ -41,8 +41,8 @@ Este é um projeto desenvolvido como prática das aulas do Chapter IV da trilha 
 Clone o projeto e acesse a pasta do mesmo.
 
 ```bash
-$ git clone https://github.com/rafaelramosdev/ignite-reactjs-chapter-IV-dash-go
-$ cd ignite-reactjs-chapter-IV-dash-go
+$ git clone https://github.com/rafaelramosdev/dashgo
+$ cd dashgo
 ```
 
 Para iniciá-lo, siga os passos abaixo:
